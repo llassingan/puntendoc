@@ -1,7 +1,3 @@
-<?php
-    include 'connect.php';
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -20,7 +16,8 @@
 </head>
 <style>
     html,body {
-        padding-top: 20px;
+        padding-top: 10px;
+        padding-bottom: 20px;
         width: 100%;
 		background-color: #87CEFA;
     }
@@ -35,7 +32,7 @@
 		border-radius: 5px;
 		width:80%;
 	  }
-      #footer {
+    #footer {
   position: fixed;
   left: 0;
   bottom: 0;
@@ -46,29 +43,29 @@
   text-align: center;
 }
 
-
 </style>
 
+<body>
 
 <nav class="navbar navbar-expand-lg navbar-light fixed-top shadow bg-white" style="background-color: #fff;" >
 
 	 	<div class="order-1 order-md-0">
-	        <a class="navbar-brand" href="index.php"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAARwAAACxCAMAAAAh3/JWAAAAA1BMVEWL1P1sQkcBAAAASElEQVR4nO3BMQEAAADCoPVPbQ0PoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIALA8UNAAFusnLHAAAAAElFTkSuQmCC" width="35px" height="35px" class="navbar-left" alt="Puntendoc"> puntendoc.com</a>
+	        <a class="navbar-brand" href="<?php echo base_url('index.php/cangga/')?>"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAARwAAACxCAMAAAAh3/JWAAAAA1BMVEWL1P1sQkcBAAAASElEQVR4nO3BMQEAAADCoPVPbQ0PoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIALA8UNAAFusnLHAAAAAElFTkSuQmCC" width="35px" height="35px" class="navbar-left" alt="Puntendoc"> puntendoc.com</a>
 	    </div>
 
 		<div class="navbar-collapse collapse order-0 dual-collapse2" >
 	        <ul class="navbar-nav mx-auto">
-             <li class="nav-item" style="margin-right: 20px; margin-left: 200px;">
-	                <a class="nav-link" href="home.php">HALAMAN ADMIN</a>
+          <li class="nav-item" style="margin-right: 20px; margin-left: 200px;">
+	                <a class="nav-link" href="<?php echo base_url('index.php/cangga/')?>">HALAMAN ADMIN</a>
 	            </li>
 	            <li class="nav-item" style="margin-right: 20px;">
-	                <a class="nav-link" href="tampil3.php">ARTIKEL</a>
+	                <a class="nav-link" href="<?php echo base_url('index.php/cangga/artikel')?>">ARTIKEL</a>
 	            </li>
 	            <li class="nav-item" style="margin-right: 20px;">
-	                <a class="nav-link" href="tampil.php">INFO OBAT</a>
+	                <a class="nav-link" href="<?php echo base_url('index.php/cangga/')?>">INFO OBAT</a>
 	            </li>
 	            <li class="nav-item" style="margin-right: 20px;">
-	                <a class="nav-link" href="tampil2.php">INFO PENYAKIT</a>
+	                <a class="nav-link" href="<?php echo base_url('index.php/cangga/penyakit')?>">INFO PENYAKIT</a>
 	            </li>
 	        </ul>
     	</div>
@@ -82,46 +79,34 @@
 	    </div>
 	</nav>
 
-<body>
     <center>
 	<div id="box">
-        <h1>Daftar Informasi Penyakit</h1>
+        <h1>Daftar Informasi Obat</h1>
         <div class="table-responsive" > 
         <table class="table table-hover" id="tablee">
             <thead class= "thead thead-dark">
               <tr>
                 <th scope="col">ID</th>
-                <th scope="col">Nama Penyakit</th>
-                <th scope="col">Gejala</th>
-                <th scope="col">Tindakan</th>
+                <th scope="col">Nama Obat</th>
+                <th scope="col">Deskripsi</th>
 				<th scope="col" >Hapus</th>
 				<th scope="col" >Edit</th>
+				
               </tr>
             </thead>
             
             <tbody>
-			<?php
-              $data = $mysqli->query("SELECT * FROM daftarpenyakit");
-              $no = 0;
-              while ($row = $data->fetch_array()){
-                $no++;
-            ?>
+            <?php $no=1; foreach ($data as $d ) {?>
               <tr>
-                <th><?php echo $no ?></th>
-                <td><?php echo $row['nama'] ?></td>
-                <td><?php echo $row['gejala'] ?></td>
-                <td><?php echo $row['tindakan'] ?></td>
-				<td>
-					<form action='deletesakit.php?id=<?php echo $row['id']; ?>' method="post">
-						<input type="hidden" name="id" value="<?php echo $row['id']; ?>">
-						<input class = "btn btn-danger" type="submit" name="submit" value="Delete">
-					</form>
-				</td>
-				<td>
-					<button type="button" class="btn btn-warning" data-toggle="modal" data-target="#<?php echo $row['id'] ?>"><i class="fas fa-user-edit"></i></button>
-				</td>
-				
-              </tr>
+                <th><?php echo $no++ ?></th>
+                <td><?php echo $d->nama ?></td>
+                <td><?php echo $d->deskripsi ?></td>
+                <td><a type="button" class="btn btn-danger"  href="<?php echo base_url('index.php/Cangga/hapusobat/'.$d->id); ?>" onClick="return confirm('Apakah Anda Yakin?')" ><i class="fas fa-user-times"></i></a></td>
+				        </td>
+				        <td>
+				      	<button type="button" class="btn btn-warning" data-toggle="modal" data-target="#<?php echo $d->id ?>"><i class="fas fa-user-edit"></i></button>
+				        </td>
+            </tr>
 			  <?php
               }
 				?>
@@ -129,7 +114,7 @@
             
           </table>
           </div>
-          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#tambahbro">TAMBAH PENYAKIT</button>
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#tambahbro">TAMBAH OBAT</button>
 		  	<!-- Button trigger modal -->
 		  </div>
     </center>
@@ -147,18 +132,14 @@
       </div>
       <div class="modal-body">
       <!-- isi form ini -->
-      <form method="POST" action="tambahsakit.php">
+      <form method="POST" action="<?php echo base_url('index.php/cangga/tambahobat') ?>">
         <div class="form-group">
-          <label for="formGroupExampleInput">Nama Penyakit</label>
-          <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Nama Penyakit" name="nama" required >
+          <label for="formGroupExampleInput">Nama Obat</label>
+          <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Nama Obat" name="nama" required >
         </div>
         <div class="form-group">
-          <label for="formGroupExampleInput">Gejala</label>
-		  <textarea class="form-control" rows="5" id="formGroupExampleInput" placeholder="Gejala" name="gejala"required></textarea>
-        </div>
-        <div class="form-group">
-          <label for="formGroupExampleInput">Tindakan</label>
-		  <textarea class="form-control" rows="5" id="formGroupExampleInput" placeholder="Tindakan" name="tindakan"required></textarea>
+          <label for="formGroupExampleInput">Deskripsi</label>
+		  <textarea class="form-control" rows="5" id="formGroupExampleInput" placeholder="Deskripsi" name="deskripsi"required></textarea>
         </div>
       </div>
       <div class="modal-footer">
@@ -173,29 +154,26 @@
 
 
 <?php
-	$no=0; foreach ($data as $row1 ) {?>
-  <div class="modal fade" id="<?php echo $row1['id'] ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	$no=1; foreach ($data as $row1 ) {?>
+  <div class="modal fade" id="<?php echo $row1->id ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-        <center><h2>EDIT DATA PENYAKIT <?php echo $row1['nama'] ?> </h2></center>
+        <center><h2>EDIT DATA OBAT <?php echo $row1->nama ?> </h2></center>
         </div>
         <div class="modal-body">
         <!-- isi form ini -->
-        <form method="post" action="updatesakit.php">
-        <input type="hidden" class="form-control" id="formGroupExampleInput" placeholder="Id" name="id" value="<?php echo $row1['id'] ?>"  required>
+        <form method="post" action="<?php echo base_url('index.php/cangga/editobat') ?>">
+        <input type="hidden" class="form-control" id="formGroupExampleInput" placeholder="Id" name="idx" value="<?php echo $row1->id ?>"  required>
 		 <div class="form-group">
-          <label for="formGroupExampleInput">Nama Penyakit</label>
-          <input type="text" class="form-control" id="formGroupExampleInput" name="nama" value="<?php echo $row1['nama'] ?>"required >
+          <label for="formGroupExampleInput">Nama Obat</label>
+          <input type="text" class="form-control" id="formGroupExampleInput" name="nama" value="<?php echo $row1->nama ?>"required >
         </div>
         <div class="form-group">
-          <label for="formGroupExampleInput">Gejala</label>
-		  <textarea class="form-control" rows="5" id="formGroupExampleInput" placeholder="Gejala" name="gejala" value="<?php echo $row1['gejala'] ?>" required></textarea>
+          <label for="formGroupExampleInput">Deskripsi</label>
+		  <textarea class="form-control" rows="5" id="formGroupExampleInput" placeholder="Deskripsi" name="deskripsi" required><?php echo $row1->deskripsi ?></textarea>
         </div>
-        <div class="form-group">
-          <label for="formGroupExampleInput">Tindakan</label>
-		  <textarea class="form-control" rows="5" id="formGroupExampleInput" placeholder="Tindakan" name="tindakan" required><?php echo $row1['tindakan'] ?></textarea>
-        </div>
+          
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Tidak</button>
@@ -207,14 +185,12 @@
   </div>
 	<?php }?>
 	
-
-    <div id="footer">
+  <div id="footer">
 	  				<p class="copyright-text" style="color: #22abc9;">Copyright &copy; 2020 All Rights Reserved by 
 	  					<a href="#" style="color: #22abc9;">Puntendoc</a>.
 	  				</p>
 	  </div>
-
-
+	
 </body>
   <script type="text/javascript">
     $(document).ready( function () {
