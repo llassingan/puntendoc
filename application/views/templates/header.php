@@ -7,7 +7,7 @@
 
     <!-- set title and icon -->
 	<title><?php echo $judul ?></title>
-	<link rel="icon" type="image/x-icon" href="<?= base_url();?>/assets/images/logo.png" />
+	<link rel="icon" type="image/x-icon" href="<?= base_url();?>/assets/img/logo.png" />
 
 
 	<!-- Bootstrap CSS -->
@@ -24,7 +24,7 @@
 	<nav class="navbar navbar-expand-lg navbar-light fixed-top shadow bg-white" style="background-color: #fff;" >
 
 	 	<div class="order-1 order-md-0">
-	        <a class="navbar-brand" href="<?php echo base_url() ?>home"><img src="<?= base_url();?>/assets/images/logo.png" width="35px" height="35px" class="navbar-left" alt="Puntendoc"> puntendoc.com</a>
+	        <a class="navbar-brand" href="<?php echo base_url() ?>home"><img src="<?= base_url();?>/assets/img/logo.png" width="35px" height="35px" class="navbar-left" alt="Puntendoc"> puntendoc.com</a>
 	    </div>
 
 		<div class="navbar-collapse collapse order-0 dual-collapse2" >
