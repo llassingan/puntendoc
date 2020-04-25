@@ -106,11 +106,7 @@
                 </div>
                 <button class="btn btn-lg btn-info btn-block" name="btn-login" id="btn-login" type="submit">
                     Masuk</button>
-                <label class="checkbox pull-left">
-                    <input type="checkbox" value="remember-me">
-                    Remember me
-                </label>
-                <p class="akun">Belum Punya Akun? <?php echo anchor('signup','Buat Akun');?></p>
+                <p style="text-align: center;" class="akun">Belum Punya Akun? <?php echo anchor('signup','Buat Akun');?></p>
             </div>
                 <div id="error" style="margin-top: 10px"></div>
         </div>
