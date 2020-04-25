@@ -1,56 +1,82 @@
-<?php defined('BASEPATH') OR exit('No direct script access allowed');?>
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Admin</title>
-    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <title> Admin</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- set title and icon -->
+  <title><?php echo $judul ?></title>
+  <link rel="icon" type="image/x-icon" href="<?= base_url();?>/assets/img/logo.png" />
+
+
+  <!-- Bootstrap CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+  <!-- My CSS -->
+  <link rel="stylesheet" href="<?=base_url(); ?>/assets/css/style.css">
 </head>
 <body>
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top shadow bg-white" style="background-color: #fff;" >
 
-<!--navbar
-<nav class="navbar navbar-inverse navbar-fixed-top">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-          </button>
-          <a class="navbar-brand" href="#">Puntendoc</a>
-        </div>
-        <div id="navbar" class="navbar-collapse collapse">
-            <div class="navbar-form navbar-right">
-                <a href="<?php echo base_url() ?>index.php/admin/dashboard/logout" type="submit" class="btn btn-success"><i class="fa fa-sign-out"></i> Logout</a>
-            </div>
+    <div class="order-1 order-md-0">
+          <a class="navbar-brand" href="#"><img src="<?= base_url();?>/assets/img/logo.png" width="35px" height="35px" class="navbar-left" alt="Puntendoc"> puntendoc.com</a>
       </div>
-    </nav>
--->
-<div class="container" style="margin-top: 80px">
-    <div class="row">
-        <div class="col-md-15">
-          <div>
-            <div class="panel panel-default row">
-              <div align="center" class="panel-body">
-                <p>Selamat Datang <b><?php echo ucfirst($this->session->userdata('nama')); ?></b> di Halaman Admin
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="list-group row">
-            <a href="#" class="list-group-item active" style="text-align: center;background-color: black;border-color: black">
-               ADMIN
-            </a>
-            <a href="#" class="list-group-item"><i class="fa fa-home"></i>Home</a>
-            <a href="dashboard.php" class="list-group-item"><i class="fa fa-dashboard"></i>Dashboard</a>
-            <a href="#" class="list-group-item"><i class="fa fa-artikel"></i>Artikel</a>
-            <a href="#" class="list-group-item"><i class="fa fa-tanya"></i>Pertanyaan</a>
-            <a href="#" class="list-group-item"><i class="fa fa-penyakit"></i>Info Penyakit</a>
-            <a href="#" class="list-group-item"><i class="fa fa-obat"></i>Info Obat</a>
-            <a href="#" class="list-group-item"><i class="fa fa-logout"></i>Logout</a>
-          </div>
+
+    <div class="navbar-collapse collapse order-0 dual-collapse2" >
+          <ul class="navbar-nav mx-auto">
+              <li class="nav-item" style="margin-right: 20px; margin-left: 200px;">
+                  <a class="nav-link" href="#">ARTIKEL</a>
+              </li>
+              <li class="nav-item" style="margin-right: 20px;">
+                  <a class="nav-link" href="#">DIREKTORI</a>
+              </li>
+              <li class="nav-item" style="margin-right: 20px;">
+                  <a class="nav-link" href="#">INFO KESEHATAN</a>
+              </li>
+              <li class="nav-item" style="margin-right: 20px;">
+                  <a class="nav-link" href="#">FORUM</a>
+              </li>
+              <li class="nav-item" style="margin-right: 20px;">
+                  <a class="nav-link" href="#">EVENT</a>
+              </li>
+              <li class="nav-item" style="margin-right: 20px;">
+                  <a class="nav-link" href="#">BUKU KESEHATAN</a>
+              </li>
+          </ul>
       </div>
+
+      <div class="navbar-collapse collapse order-3 dual-collapse2">
+          <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                  <a class="btn btn-outline-primary" href="<?php echo base_url() ?>index.php/admin/dashboard/logout"type="submit" class="btn btn-success">LOG OUT</a>
+              </li>
+          </ul>
+      </div>
+  </nav>
+
+<div class="container">
+    <div id="kiri" style="width:50%; height:500px; float:left; margin-top: 60px">
+        <object data="your-svg-image.svg" type="image/svg+xml"> 
+        <img src="<?= base_url();?>/assets/img/doct.png">
+        </object>
+    </div>
+    <div id="kanan" style="width:50%; height: 500px;float:right; margin-top: 60px">
+        <h1 style="text-align: center; margin-top: 180px; font-size: 4em">Selamat Datang <b><?php echo $this->session->userdata("nama_user") ?></b> !</h1>
     </div>
 </div>
 
+    <!-- Site footer -->
+  <div class="footer">
+    <p class="copyright-text" style="color: #fff">Copyright &copy; 2017 All Rights Reserved by 
+    <a href="#" style="color: #fff">Puntendoc</a>.
+    </p>
+  </div>
+
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
 </body>
 </html>
