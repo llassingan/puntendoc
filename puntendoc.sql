@@ -50,6 +50,18 @@ CREATE TABLE `tbl_obat` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `tbl_dokter`
+--
+
+CREATE TABLE `tbl_dokter` (
+  `id` int(11) NOT NULL,
+  `nama` varchar(50) NOT NULL,
+  `deskripsi` varchar(1000) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `tbl_penyakit`
 --
 
@@ -112,6 +124,13 @@ ALTER TABLE `tbl_obat`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `tbl_dokter`
+--
+ALTER TABLE `tbl_dokter`
+  ADD PRIMARY KEY (`id`);
+
+
+--
 -- Indexes for table `tbl_penyakit`
 --
 ALTER TABLE `tbl_penyakit`
@@ -143,6 +162,12 @@ ALTER TABLE `tbl_artikel`
 -- AUTO_INCREMENT for table `tbl_obat`
 --
 ALTER TABLE `tbl_obat`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `tbl_dokter`
+--
+ALTER TABLE `tbl_dokter`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
