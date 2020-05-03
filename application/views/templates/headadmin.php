@@ -30,14 +30,20 @@
 		<div class="navbar-collapse collapse order-0 dual-collapse2" >
 	        <ul class="navbar-nav mx-auto">
 	            <li class="nav-item" style="margin-right: 20px; margin-left: 200px;">
-	                <a class="nav-link" href="#">ARTIKEL</a>
+	                <a class="nav-link" href="<?php echo base_url() ?>index.php/admin/dashboard">LANDING PAGE</a>
 	            </li>
 	            <li class="nav-item" style="margin-right: 20px;">
-	                <a class="nav-link" href="#">OBAT</a>
+	                <a class="nav-link" href="<?php echo base_url('index.php/cangga/artikel')?>">KELOLA ARTIKEL</a>
 	            </li>
 	            <li class="nav-item" style="margin-right: 20px;">
-	                <a class="nav-link" href="#">PENYAKIT</a>
+	                <a class="nav-link" href="<?php echo base_url('index.php/cangga/')?>">KELOLA OBAT</a>
 	            </li>
+	            <li class="nav-item" style="margin-right: 20px;">
+	                <a class="nav-link" href="<?php echo base_url('index.php/cangga/penyakit')?>">KELOLA PENYAKIT</a>
+                </li>
+                <li class="nav-item" style="margin-right: 20px;">
+	                <a class="nav-link" href="#">KELOLA PERTANYAAN</a>
+                </li>
 	            
 	        </ul>
     	</div>
@@ -45,7 +51,7 @@
     	<div class="navbar-collapse collapse order-3 dual-collapse2">
 	        <ul class="navbar-nav ml-auto">
 	            <li class="nav-item">
-	                <a class="btn btn-outline-primary" href="login">LOGIN</a>
+	                <a class="btn btn-outline-secondary" href="<?php echo base_url() ?>index.php/admin/dashboard/logout">LOGOUT</a>
 	            </li>
 	        </ul>
 	    </div>

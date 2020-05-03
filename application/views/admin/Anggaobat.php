@@ -12,7 +12,7 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
   
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-    <title>Informasi Obat</title>
+    <title>Kelola Obat</title>
 </head>
 <style>
     html,body {
@@ -32,7 +32,7 @@
 		border-radius: 5px;
 		width:80%;
 	  }
-    #footer {
+#footer {
   position: fixed;
   left: 0;
   bottom: 0;
@@ -50,22 +50,25 @@
 <nav class="navbar navbar-expand-lg navbar-light fixed-top shadow bg-white" style="background-color: #fff;" >
 
 	 	<div class="order-1 order-md-0">
-	        <a class="navbar-brand" href="<?php echo base_url('index.php/cangga/')?>"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAARwAAACxCAMAAAAh3/JWAAAAA1BMVEWL1P1sQkcBAAAASElEQVR4nO3BMQEAAADCoPVPbQ0PoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIALA8UNAAFusnLHAAAAAElFTkSuQmCC" width="35px" height="35px" class="navbar-left" alt="Puntendoc"> puntendoc.com</a>
+	        <a class="navbar-brand" href="<?php echo base_url() ?>home"><img src="<?= base_url();?>/assets/img/logo.png" width="35px" height="35px" class="navbar-left" alt="Puntendoc"> puntendoc.com</a>
 	    </div>
 
 		<div class="navbar-collapse collapse order-0 dual-collapse2" >
 	        <ul class="navbar-nav mx-auto">
           <li class="nav-item" style="margin-right: 20px; margin-left: 200px;">
-	                <a class="nav-link" href="<?php echo base_url('index.php/cangga/')?>">HALAMAN ADMIN</a>
+	                <a class="nav-link" href="<?php echo base_url() ?>index.php/admin/dashboard">LANDING PAGE</a>
 	            </li>
 	            <li class="nav-item" style="margin-right: 20px;">
-	                <a class="nav-link" href="<?php echo base_url('index.php/cangga/artikel')?>">ARTIKEL</a>
+	                <a class="nav-link" href="<?php echo base_url('index.php/cangga/artikel')?>">KELOLA ARTIKEL</a>
 	            </li>
 	            <li class="nav-item" style="margin-right: 20px;">
-	                <a class="nav-link" href="<?php echo base_url('index.php/cangga/')?>">INFO OBAT</a>
+	                <a class="nav-link" href="<?php echo base_url('index.php/cangga/')?>">KELOLA OBAT</a>
 	            </li>
 	            <li class="nav-item" style="margin-right: 20px;">
-	                <a class="nav-link" href="<?php echo base_url('index.php/cangga/penyakit')?>">INFO PENYAKIT</a>
+	                <a class="nav-link" href="<?php echo base_url('index.php/cangga/penyakit')?>">KELOLA PENYAKIT</a>
+	            </li>
+              <li class="nav-item" style="margin-right: 20px;">
+	                <a class="nav-link" href="<?php echo base_url('index.php/cangga/penyakit')?>">KELOLA PERTANYAAN</a>
 	            </li>
 	        </ul>
     	</div>
@@ -73,7 +76,7 @@
     	<div class="navbar-collapse collapse order-3 dual-collapse2">
 	        <ul class="navbar-nav ml-auto">
 	            <li class="nav-item">
-	                <a class="btn btn-outline-secondary" href="#">LOG OUT</a>
+	                <a class="btn btn-outline-secondary" href="<?php echo base_url() ?>index.php/admin/dashboard/logout">LOG OUT</a>
 	            </li>
 	        </ul>
 	    </div>

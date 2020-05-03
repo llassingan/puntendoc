@@ -9,6 +9,14 @@ class Cangga extends CI_Controller {
         parent::__construct();
         //load model yg angga buat
         $this->load->model('Mangga');
+        $this->load->model('admin');
+        if($this->admin->is_role() != "admin"){
+            if($this->admin->is_role() == "user"){
+                redirect("index.php/user/dashboard");
+            }else{
+                redirect("login");
+            }
+        }
      }
 
     //  public $data = array(
@@ -19,21 +27,26 @@ class Cangga extends CI_Controller {
 
    public function index()
    {
-       
+       //$data['judul']='Kelola Obat';
        $data_obat = $this->Mangga->Getobat();
        // load view obat di index
+       //$this->load->view('templates/headadmin',$data);
        $this->load->view('Admin/Anggaobat',['data' => $data_obat]);
    }
 
    public function penyakit()
    {
-       $data_penyakit = $this->Mangga->Getpenyakit();
+       //$data['judul'] = 'Kelola Penyakit';
+        $data_penyakit = $this->Mangga->Getpenyakit();
+       //$this->load->view('templates/headadmin',$data);
        $this->load->view('Admin/anggapenyakit',['data'=>$data_penyakit]);
    }
 
    public function artikel()
    {
+       //$data['judul'] = 'Kelola Artikel';
     $data_artikel = $this->Mangga->Getartikel();
+    //$this->load->view('templates/headadmin',$data);
     $this->load->view('Admin/anggaartikel',['data'=>$data_artikel]);
    }
 

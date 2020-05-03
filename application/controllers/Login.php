@@ -18,7 +18,12 @@ class Login extends CI_Controller {
             if($this->admin->is_logged_in())
             {
                 //jika memang session sudah terdaftar, maka redirect ke halaman dahsboard
-                redirect("dashboard");
+                if($this->session->userdata("role") == "admin"){
+                    redirect('admin/dashboard/');
+                }else{
+                    redirect('user/dashboard/');
+                }
+
 
             }else{
 

@@ -10,7 +10,11 @@ class Dashboard extends CI_Controller {
         $this->load->model('admin');
         //cek session dan level user
         if($this->admin->is_role() != "admin"){
-            redirect("login");
+            if($this->admin->is_role() == "user"){
+                redirect("index.php/user/dashboard");
+            }else{
+                redirect("login");
+            }
         }
     }
 

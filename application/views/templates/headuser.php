@@ -30,22 +30,18 @@
 		<div class="navbar-collapse collapse order-0 dual-collapse2" >
 	        <ul class="navbar-nav mx-auto">
 	            <li class="nav-item" style="margin-right: 20px; margin-left: 200px;">
-	                <a class="nav-link" href="#">ARTIKEL</a>
+	                <a class="nav-link" href="<?php echo base_url() ?>index.php/user/dashboard/">LANDING PAGE</a>
 	            </li>
 	            <li class="nav-item" style="margin-right: 20px;">
-	                <a class="nav-link" href="#">OBAT</a>
+	                <a class="nav-link" href="#">TANYA DOKTER</a>
 	            </li>
-	            <li class="nav-item" style="margin-right: 20px;">
-	                <a class="nav-link" href="#">PENYAKIT</a>
-	            </li>
-	            
 	        </ul>
     	</div>
 
     	<div class="navbar-collapse collapse order-3 dual-collapse2">
 	        <ul class="navbar-nav ml-auto">
 	            <li class="nav-item">
-	                <a class="btn btn-outline-primary" href="login">LOGIN</a>
+	                <a class="btn btn-outline-secondary" href="<?php echo base_url() ?>index.php/user/dashboard/logout">LOGOUT</a>
 	            </li>
 	        </ul>
 	    </div>

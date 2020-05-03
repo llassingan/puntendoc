@@ -9,24 +9,24 @@
 
 
 		<div class="carousel-item active">
-			<img src="http://placekitten.com/1600/600" class="d-block w-100" alt="...">
+			<img src="<?=base_url(); ?>/assets/img/car3.jpg" class="d-block w-100" alt="...">
 			<div class="carousel-caption d-none d-md-block">
-				<h5>First slide label</h5>
-				<p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+				<h5 style="color : #42b4ff;" >Puntendoc</h5>
+				<p style="color : #42b4ff;">Solusi Kesehatanmu</p>
 			</div>
 		</div>
 		<div class="carousel-item">
-			<img src="http://placekitten.com/1600/600" class="d-block w-100" alt="...">
+			<img src="<?=base_url(); ?>/assets/img/car1.jpg" class="d-block w-100" alt="...">
 			<div class="carousel-caption d-none d-md-block">
-				<h5>Second slide label</h5>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+				<h5 style="color : white;">Puntendoc</h5>
+				<p style="color : white;">Solusi Kesehatanmu</p>
 			</div>
 		</div>
 		<div class="carousel-item">
-			<img src="http://placekitten.com/1600/600" class="d-block w-100" alt="...">
+			<img src="<?=base_url(); ?>/assets/img/car2.jpg" class="d-block w-100" alt="...">
 			<div class="carousel-caption d-none d-md-block">
-				<h5>Third slide label</h5>
-				<p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+				<h5 style="color : cyan;">Puntendoc</h5>
+				<p style="color : cyan;">Solusi Kesehatanmu</p>
 			</div>
 		</div>
 	</div>
@@ -39,35 +39,26 @@
 		<span class="sr-only">Next</span>
 	</a>
 
-	<!-- Search form -->
-	<form class="form-inline d-flex justify-content-center md-form form-sm active-cyan active-cyan-2 mt-2" id="search-container">
-		<div class="rounded-pill" style="width: 750px; padding: 5px; background-color: #fff;opacity:0.7;">
-			<input class="form-control-sm ml-3" style="width: 680px;" type="text" placeholder="Search" aria-label="Search">
-			<i class="fa fa-search search-icon" aria-hidden="true"></i>
-		</div>
-	</form>
-
 </div>
 
 <section class="section-dokter">
 	<div class="container" style="margin-top: 40px;">
 		<div class="row row-cols-4">
 
-			<?php
-			for ($i=0; $i < sizeof($dataDokter) && $i < 7; $i++) { 
-				echo '<a href="'. base_url(). 'dokterdetail/'. $dataDokter[$i]['id'] .'" class="col" style="margin-top: 30px;">';
-				echo '<div class="card" style="width: 16rem; height: 6rem; ">';
-				echo '<div class="row no-gutters">';
-				echo '<div class="col-sm-2 d-flex align-items-center justify-content-center" style="margin-left: 20px;">';
-				echo '<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcS6WT2yY9kTYrktLoGuubV5RrFfbVoT3tOA5y68x01UEXJMfzyI&usqp=CAU" class="rounded-circle" style="width: 50px; height: 50px;" alt="...">';
-				echo '</div>';
-				echo '<div class="col-sm-8">';
-				echo '<div class="card-body p-0">';
-				echo '<h5 class="card-title p-0 m-0">'. $dataDokter[$i]['nama'] .'</h5>';
-				echo '<p class="card-text p-0 m-0">'. $dataDokter[$i]['deskripsi'] .'</p>';
-				echo '</div></div></div></div></a>';
-			}
-			?>
+			<!-- <?php
+			// for ($i=0; $i < sizeof($dataDokter) && $i < 7; $i++) { 
+			// 	echo '<a href="'. base_url(). 'dokterdetail/'. $dataDokter[$i]['id'] .'" class="col" style="margin-top: 30px;">';
+			// 	echo '<div class="card" style="width: 16rem; height: 6rem; ">';
+			// 	echo '<div class="row no-gutters">';
+			// 	echo '<div class="col-sm-2 d-flex align-items-center justify-content-center" style="margin-left: 20px;">';
+			// 	echo '<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcS6WT2yY9kTYrktLoGuubV5RrFfbVoT3tOA5y68x01UEXJMfzyI&usqp=CAU" class="rounded-circle" style="width: 50px; height: 50px;" alt="...">';
+			// 	echo '</div>';
+			// 	echo '<div class="col-sm-8">';
+			// 	echo '<div class="card-body p-0">';
+			// 	echo '<h5 class="card-title p-0 m-0">'. $dataDokter[$i]['nama'] .'</h5>';
+			// 	echo '<p class="card-text p-0 m-0">'. $dataDokter[$i]['deskripsi'] .'</p>';
+			// 	echo '</div></div></div></div></a>';}
+			?> -->
 
 			<!-- <div class="col" style="margin-top: 30px;">
 				<div class="card" style="width: 16rem; height: 6rem; ">
@@ -129,13 +120,30 @@
 		}
 
 		?>
-		<a class="col-sm-2" href="<?php echo base_url() ?>obatlist">
+
+			<div class="col" style="margin-top: 30px;">
+				<a href="<?php echo base_url() ?>obatlist">
+					<div class="card" style="width: 16rem; height: 6rem; ">
+						<div class="row no-gutters">
+							<div class="col-sm-2 d-flex align-items-center justify-content-center" style="margin-left: 20px;">
+								<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQRqR8HpOZMZwoJGqhadBSizby6q25ZLA8uPOY0V9l64NxD3mLu&usqp=CAU" class="rounded-circle" style="width: 50px; height: 50px;" alt="...">
+							</div>
+							<div class="col-sm-8">
+								<div class="card-body p-0">
+									<h5 class="card-title p-0 m-0">Lihat dokter lainnya >></h5>
+								</div>
+							</div>
+						</div>
+					</div>
+				</a>
+			</div>
+		<!-- <a class="col-sm-2" href="<?php echo base_url() ?>obatlist">
 			<div class="row text-center">
 				<div class="card-body border-bottom shadow-sm p-3 bg-white">
 					<p class="card-text">Lihat obat lainnya >> </p>
 				</div>
 			</div>
-		</a>
+		</a> -->
 <!-- 		<div class="row no-gutters" >
 			<div class="col" style="width: 20%;">
 				<div class="row text-center">
@@ -300,6 +308,7 @@
 			echo '<p class="card-text isi-artikel">'. $artikel['isi'] .'</p>';			
 			echo '<p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>';
 			echo '</div></div></a>';
+			echo '</br>';
 		}
 
 		?>
