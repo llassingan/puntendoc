@@ -159,6 +159,10 @@
                 <option value="Tren">Tren</option>
         </select>
         </div>
+        <div class="form-group">
+          <label for="formGroupExampleInput">Url Gambar</label>
+          <input type="text" class="form-control" id="formGroupExampleInput" name="link"required >
+        </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
@@ -201,6 +205,10 @@
                 <option value="Kesehatan Keluarga" selected>Kesehatan Keluarga</option>
                 <option value="Tren">Tren</option>
         </select>
+        </div>
+        <div class="form-group">
+          <label for="formGroupExampleInput">Url Gambar</label>
+          <input type="text" class="form-control" id="formGroupExampleInput" name="link" value="<?php echo $row1->link ?>"required >
         </div>
         </div>
         <div class="modal-footer">

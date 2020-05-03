@@ -83,9 +83,11 @@ class Cangga extends CI_Controller {
    {
        $nama = $this->input->post('nama');
        $deskripsi = $this->input->post('deskripsi');
+       $link = $this->input->post('link');
        $data = array(
            'nama' => $nama,
            'deskripsi' => $deskripsi,
+           'link' => $link,
        );
        $this->Mangga->tambahobat($data);
 
@@ -98,10 +100,12 @@ class Cangga extends CI_Controller {
        $nama = $this->input->post('nama');
        $gejala = $this->input->post('gejala');
        $tindakan = $this->input->post('tindakan');
+       $link = $this->input->post('link');
        $data = array(
            'nama' => $nama,
            'gejala' => $gejala,
            'tindakan' => $tindakan,
+           'link' => $link,
        );
        $this->Mangga->tambahsakit($data);
 
@@ -116,11 +120,13 @@ class Cangga extends CI_Controller {
        $penulis = $this->input->post('penulis');
        $isi = $this->input->post('isi');
        $kategori = $this->input->post('kategori');
+       $link = $this->input->post('link');
        $data = array(
            'judul' => $judul,
            'penulis' => $penulis,
            'isi' => $isi,
            'kategori' => $kategori,
+           'link' => $link,
        );
        $this->Mangga->tambahartikel($data);
 
@@ -134,9 +140,11 @@ class Cangga extends CI_Controller {
        $id = $this->input->post('idx');
        $nama = $this->input->post('nama');
        $deskripsi = $this->input->post('deskripsi');
+       $link = $this->input->post('link');
        $data = array(
            'nama' => $nama,
            'deskripsi' => $deskripsi,
+           'link' => $link,
        );
        $this->Mangga->editobat($id,$data);
 
@@ -150,10 +158,12 @@ class Cangga extends CI_Controller {
        $nama = $this->input->post('nama');
        $gejala = $this->input->post('gejala');
        $tindakan = $this->input->post('tindakan');
+       $link = $this->input->post('link');
        $data = array(
            'nama' => $nama,
            'gejala' => $gejala,
            'tindakan' => $tindakan,
+           'link' => $link,
        );
        $this->Mangga->editsakit($id,$data);
 
@@ -167,11 +177,13 @@ class Cangga extends CI_Controller {
        $penulis = $this->input->post('penulis');
        $isi = $this->input->post('isi');
        $kategori = $this->input->post('kategori');
+       $link = $this->input->post('link');
        $data = array(
            'judul' => $judul,
            'penulis' => $penulis,
-           'isi'=>$isi,
+           'isi' => $isi,
            'kategori' => $kategori,
+           'link' => $link,
        );
        $this->Mangga->editartikel($id,$data);
 

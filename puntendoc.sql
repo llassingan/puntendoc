@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 03 Bulan Mei 2020 pada 10.58
+-- Waktu pembuatan: 03 Bulan Mei 2020 pada 18.23
 -- Versi server: 10.4.8-MariaDB
 -- Versi PHP: 7.2.24
 
@@ -32,16 +32,17 @@ CREATE TABLE `tbl_artikel` (
   `id` int(11) NOT NULL,
   `judul` varchar(50) NOT NULL,
   `penulis` varchar(50) NOT NULL,
-  `isi` varchar(1000) NOT NULL
+  `isi` varchar(1000) NOT NULL,
+  `kategori` varchar(25) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data untuk tabel `tbl_artikel`
 --
 
-INSERT INTO `tbl_artikel` (`id`, `judul`, `penulis`, `isi`) VALUES
-(1, 'Cara buat anu', 'aaa', 'aafsvsdvdvdvdvdvdv aafsvsdvdvdvdvdvdv aafsvsdvdvdvdvdvdv'),
-(3, 'menanam ubi', 'angga', 'gali dan tanem');
+INSERT INTO `tbl_artikel` (`id`, `judul`, `penulis`, `isi`, `kategori`) VALUES
+(4, 'masak mie goreng', 'penemu', 'hahahhaha prank', 'Tren'),
+(5, 'saas', 'sfas', 'sfasf', 'Kesehatan Keluarga');
 
 -- --------------------------------------------------------
 
@@ -76,8 +77,7 @@ INSERT INTO `tbl_obat` (`id`, `nama`, `deskripsi`) VALUES
 (6, 'Amoksisilin', 'Amoksisilin merupakan antibiotik yang digunakan dalam pengobatan berbagai infeksi bakteri. Obat ini merupakan lini pertama untuk pengobatan infeksi telinga tengah. Obat ini juga dapat digunakan untuk mengobati faringitis streptokokus, pneumonia, infeksi kulit, dan infeksi saluran kemih.'),
 (7, 'ANTASIDA DOEN', 'ANTASIDA DOEN merupakan obat dengan kandungan Alumunium Hydroxide dan Magnesium Hydroxide. Obat ini digunakan untuk mengatasi maag dengan gejala nyeri ulu hati, sering bersendawa, dan perut kembung.'),
 (8, 'Penisilin', 'Penisilin adalah sebuah kelompok antibiotik β-laktam yang digunakan dalam penyembuhan penyakit infeksi karena bakteri, biasanya berjenis Gram positif.'),
-(9, 'Cetirizine', 'Cetirizine, dijual di bawah nama merek Zyrtec antara lain, adalah antihistamin generasi kedua yang digunakan untuk mengobati rinitis alergi, dermatitis, dan urtikaria. Itu diambil melalui mulut. Efek umumnya dimulai dalam satu jam dan berlangsung selama sekitar satu hari. '),
-(10, 'Permetrin', 'Permetrin, adalah senyawa kimia buatan yang digunakan sebagai obat dan juga insektisida. Dalam pengobatan, senyawa ini digunakan untuk kudis dan kutuan dengan cara dioleskan. Sebagai insektisida, senyawa ini disemprot pada baju atau kelambu untuk membunuh serangga-serangga yang menyentuhnya.');
+(9, 'Cetirizine', 'Cetirizine, dijual di bawah nama merek Zyrtec antara lain, adalah antihistamin generasi kedua yang digunakan untuk mengobati rinitis alergi, dermatitis, dan urtikaria. Itu diambil melalui mulut. Efek umumnya dimulai dalam satu jam dan berlangsung selama sekitar satu hari. ');
 
 -- --------------------------------------------------------
 
@@ -97,7 +97,10 @@ CREATE TABLE `tbl_penyakit` (
 --
 
 INSERT INTO `tbl_penyakit` (`id`, `nama`, `gejala`, `tindakan`) VALUES
-(4, 'PANADOL', 'adada', 'adxax');
+(4, 'PANADOL', 'adada', 'adxax'),
+(5, 'KEJANG', 'KEJANG KEJANG', 'KIJANG SATU GANTI'),
+(6, 'BATUK', 'BATUK BATUK', 'BATUKIN'),
+(7, 'lompat', 'hahahah', 'jump');
 
 -- --------------------------------------------------------
 
@@ -108,8 +111,18 @@ INSERT INTO `tbl_penyakit` (`id`, `nama`, `gejala`, `tindakan`) VALUES
 CREATE TABLE `tbl_pertanyaan` (
   `id` int(11) NOT NULL,
   `username` varchar(50) NOT NULL,
-  `pertanyaan` varchar(1000) NOT NULL
+  `pertanyaan` varchar(1000) NOT NULL,
+  `kategori` varchar(25) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `tbl_pertanyaan`
+--
+
+INSERT INTO `tbl_pertanyaan` (`id`, `username`, `pertanyaan`, `kategori`) VALUES
+(1, 'user1', 'NANI ADALAH', 'Tren'),
+(2, 'user2', 'saya bisa terbang gak/', 'Kesehatan Keluarga'),
+(3, 'user2', 'bisa jatuh gak?', 'Tren');
 
 -- --------------------------------------------------------
 
@@ -137,7 +150,8 @@ INSERT INTO `tbl_users` (`id`, `nama_user`, `username`, `password`, `role`, `ema
 (4, 'angga', 'angga', '8479c86c7afcb56631104f5ce5d6de62', 'admin', 'angga@mail.com'),
 (5, 'christina', 'christina', 'e311dd5fd4cdbba780ea0d0062df7788', 'admin', 'tina@mail.com'),
 (6, 'alfian', 'alfian', '64fc0802fbae681ee55a9a4b87f0aec7', 'admin', 'alf@mail.com'),
-(7, 'clara', 'clara', '515f0097a0e7885fc31543dd852ad935', 'admin', 'clar@mail.com');
+(7, 'clara', 'clara', '515f0097a0e7885fc31543dd852ad935', 'admin', 'clar@mail.com'),
+(8, 'Superman', 'user2', '7e58d63b60197ceb55a1c487989a3720', 'user', 'super@man.co.id');
 
 --
 -- Indexes for dumped tables
@@ -188,7 +202,7 @@ ALTER TABLE `tbl_users`
 -- AUTO_INCREMENT untuk tabel `tbl_artikel`
 --
 ALTER TABLE `tbl_artikel`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT untuk tabel `tbl_dokter`
@@ -206,19 +220,19 @@ ALTER TABLE `tbl_obat`
 -- AUTO_INCREMENT untuk tabel `tbl_penyakit`
 --
 ALTER TABLE `tbl_penyakit`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT untuk tabel `tbl_pertanyaan`
 --
 ALTER TABLE `tbl_pertanyaan`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT untuk tabel `tbl_users`
 --
 ALTER TABLE `tbl_users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

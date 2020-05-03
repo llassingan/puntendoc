@@ -1,5 +1,4 @@
 
-		$(function() {
     	$.getJSON('http://localhost/PUNTENDOC/assets/json/data.json',function(hasil){
         console.log(hasil);
         d="";
@@ -23,4 +22,3 @@
             document.getElementById("kontennya").innerHTML += d;
             
     });
-});

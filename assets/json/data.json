@@ -1,21 +1,21 @@
 [
     {"nama":"dr Angga",
     "spesialis" : "Dokter Jiwa",
-    "gambar":"gambar.png"},
+    "gambar":"assets/json/gambar1.jpg"},
 
     {"nama":"dr Alfian",
     "spesialis" : "Dokter Anak",
-    "gambar":"gambar2.png"},
+    "gambar":"assets/json/gambar2.jpg"},
     
     {"nama":"dr Intan",
     "spesialis": "Dokter Bedah",
-    "gambar":"gambar3.png"}
+    "gambar":"assets/json/gambar3.jpg"},
 	
 	{"nama":"dr Clara",
     "spesialis": "Dokter Gigi",
-    "gambar":"gambar4.png"}
+    "gambar":"assets/json/gambar4.jpg"},
 	
 	{"nama":"dr Christina",
-    "spesialis": "Dokter Kulit",,
-    "gambar":"gambar5.png"}
+    "spesialis": "Dokter Kulit",
+    "gambar":"assets/json/gambar5.jpg"}
 ]

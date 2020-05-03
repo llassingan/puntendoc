@@ -16,7 +16,6 @@
 
 	<!-- My CSS -->
 	<link rel="stylesheet" href="<?=base_url(); ?>/assets/css/style.css">
-	<script src="<?=base_url(); ?>/assets/json/ops.js"></script>
 
 
 </head>

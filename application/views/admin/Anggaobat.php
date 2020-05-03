@@ -145,6 +145,10 @@
           <label for="formGroupExampleInput">Deskripsi</label>
 		  <textarea class="form-control" rows="5" id="formGroupExampleInput" placeholder="Deskripsi" name="deskripsi"required></textarea>
         </div>
+        <div class="form-group">
+          <label for="formGroupExampleInput">Url Gambar</label>
+          <input type="text" class="form-control" id="formGroupExampleInput" name="link"required >
+        </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
@@ -177,7 +181,10 @@
           <label for="formGroupExampleInput">Deskripsi</label>
 		  <textarea class="form-control" rows="5" id="formGroupExampleInput" placeholder="Deskripsi" name="deskripsi" required><?php echo $row1->deskripsi ?></textarea>
         </div>
-          
+        <div class="form-group">
+          <label for="formGroupExampleInput">Url Gambar</label>
+          <input type="text" class="form-control" id="formGroupExampleInput" name="link" value="<?php echo $row1->link ?>"required >
+        </div>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Tidak</button>

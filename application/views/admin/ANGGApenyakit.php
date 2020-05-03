@@ -151,6 +151,10 @@
           <label for="formGroupExampleInput">Tindakan</label>
 		  <textarea class="form-control" rows="5" id="formGroupExampleInput" placeholder="Tindakan" name="tindakan"required></textarea>
         </div>
+        <div class="form-group">
+          <label for="formGroupExampleInput">Url Gambar</label>
+          <input type="text" class="form-control" id="formGroupExampleInput" name="link"required >
+        </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
@@ -186,6 +190,10 @@
         <div class="form-group">
           <label for="formGroupExampleInput">Tindakan</label>
 		  <textarea class="form-control" rows="5" id="formGroupExampleInput" placeholder="Tindakan" name="tindakan" required><?php echo $row1->tindakan ?></textarea>
+        </div>
+        <div class="form-group">
+          <label for="formGroupExampleInput">Url Gambar</label>
+          <input type="text" class="form-control" id="formGroupExampleInput" name="link" value="<?php echo $row1->link ?>"required >
         </div>
         </div>
         <div class="modal-footer">
