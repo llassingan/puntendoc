@@ -43,9 +43,9 @@
 
 <section class="section-dokter">
 	<div class="container" style="margin-top: 40px;">
-		<div class="row row-cols-4">
+		<div class="row row-cols-4 align-items-center justify-content-center" id="kontennya" >
 
-			<!-- <?php
+			<!-- 
 			// for ($i=0; $i < sizeof($dataDokter) && $i < 7; $i++) { 
 			// 	echo '<a href="'. base_url(). 'dokterdetail/'. $dataDokter[$i]['id'] .'" class="col" style="margin-top: 30px;">';
 			// 	echo '<div class="card" style="width: 16rem; height: 6rem; ">';
@@ -58,25 +58,24 @@
 			// 	echo '<h5 class="card-title p-0 m-0">'. $dataDokter[$i]['nama'] .'</h5>';
 			// 	echo '<p class="card-text p-0 m-0">'. $dataDokter[$i]['deskripsi'] .'</p>';
 			// 	echo '</div></div></div></div></a>';}
-			?> -->
+			 -->
 
 			<!-- <div class="col" style="margin-top: 30px;">
 				<div class="card" style="width: 16rem; height: 6rem; ">
 					<div class="row no-gutters">
-						<div class="col-sm-2 d-flex align-items-center justify-content-center" style="margin-left: 20px;">
-							<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcS6WT2yY9kTYrktLoGuubV5RrFfbVoT3tOA5y68x01UEXJMfzyI&usqp=CAU" class="rounded-circle" style="width: 50px; height: 50px;" alt="...">
+						<div class="col-sm-2 d-flex align-items-center justify-content-center" style="margin-left: 20px;" id="c1">
+						
 						</div>
 						<div class="col-sm-8">
-							<div class="card-body p-0">
-								<h5 class="card-title p-0 m-0">Dokter</h5>
-								<p class="card-text p-0 m-0">Deskripsi</p>
+							<div class="card-body p-0" id="c2">
+								
 							</div>
 						</div>
 					</div>
 				</div>
 			</div> -->
 
-			<div class="col" style="margin-top: 30px;">
+			<!-- <div class="col" style="margin-top: 30px;">
 				<a href="<?php echo base_url() ?>dokterlist">
 					<div class="card" style="width: 16rem; height: 6rem; ">
 						<div class="row no-gutters">
@@ -91,7 +90,7 @@
 						</div>
 					</div>
 				</a>
-			</div>
+			</div> -->
 		</div>
 		<hr style=" margin-top: 40px;">
 	</div>
@@ -121,10 +120,10 @@
 
 		?>
 
-			<div class="col" style="margin-top: 30px;">
+			<div class="col" style="margin-top: 50px;">
 				<a href="<?php echo base_url() ?>obatlist">
-					<div class="card" style="width: 16rem; height: 6rem; ">
-						<div class="row no-gutters">
+					<div class="card align-items-center justify-content-center" style="width: 10rem; height: 8rem; ">
+						<div class="row no-gutters align-items-center justify-content-center">
 							<div class="col-sm-2 d-flex align-items-center justify-content-center" style="margin-left: 20px;">
 								<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQRqR8HpOZMZwoJGqhadBSizby6q25ZLA8uPOY0V9l64NxD3mLu&usqp=CAU" class="rounded-circle" style="width: 50px; height: 50px;" alt="...">
 							</div>
@@ -214,7 +213,7 @@
 			echo '</div>';
 			echo '<div class="col-md-8">';
 			echo '<div class="card-body p-0" style="padding: 20px;">';
-			echo '<span class="badge badge-success mb-3">Kategori</span>';
+			echo '<span class="badge badge-success mb-3">'.$artikel['kategori'].'</span>';
 			echo '<h5 class="card-title">' . $artikel['judul'] . '</h5>';
 			echo '<p class="card-text isi-artikel">'. $artikel['isi'] .'</p>';			
 			echo '<p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>';
@@ -225,4 +224,24 @@
 		?>
 
 	</div>
+	<!-- <script>
+		$(document).ready(function(){
+
+$(function() {
+var dataku = [];
+$.getJSON('<?=base_url(); ?>assets/json/data.json', function(data) {
+	$.each(data.p1, function(i, f) {
+	   var gbr1 = "<img class='card-img-top' id='c1' src='<?= base_url();?>assets/json/"+ f.gambar +"' alt='Card image cap'> "
+	   var tblCol = "<h5 class='card-title p-0 m-0'>"+f.nama+"</h5> <p class='card-text p-0 m-0'>"+f.spesialis"</p>" 
+	   $(gbr1).appendTo("#c1"); 
+	   $(tblCol).appendTo("#c2");		
+  });
+
+});
+
+});
+
+});
+
+	  </script> -->
 </section>

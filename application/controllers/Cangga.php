@@ -50,7 +50,10 @@ class Cangga extends CI_Controller {
     $this->load->view('Admin/anggaartikel',['data'=>$data_artikel]);
    }
 
-
+    public function pertanyaan(){
+        $data_tanya = $this->Mangga->Gettanya();
+        $this->load->view('Admin/anggatanya',['data'=>$data_tanya]);
+    }
    #lengkapi FUNCTION BERIKUT
    public function hapusobat($id)
    {
@@ -70,6 +73,11 @@ class Cangga extends CI_Controller {
        redirect('/cangga/artikel');	
    }
 
+   public function hapustanya($id)
+   {
+       $this->Mangga->deltanya($id);
+       redirect('/cangga/pertanyaan');	
+   }
 
    public function tambahobat()
    {
@@ -107,10 +115,12 @@ class Cangga extends CI_Controller {
        $judul = $this->input->post('judul');
        $penulis = $this->input->post('penulis');
        $isi = $this->input->post('isi');
+       $kategori = $this->input->post('kategori');
        $data = array(
            'judul' => $judul,
            'penulis' => $penulis,
            'isi' => $isi,
+           'kategori' => $kategori,
        );
        $this->Mangga->tambahartikel($data);
 
@@ -156,10 +166,12 @@ class Cangga extends CI_Controller {
        $judul = $this->input->post('judul');
        $penulis = $this->input->post('penulis');
        $isi = $this->input->post('isi');
+       $kategori = $this->input->post('kategori');
        $data = array(
            'judul' => $judul,
            'penulis' => $penulis,
            'isi'=>$isi,
+           'kategori' => $kategori,
        );
        $this->Mangga->editartikel($id,$data);
 

@@ -13,6 +13,7 @@
   
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <title>Kelola Obat</title>
+    <link rel="icon" type="image/x-icon" href="<?= base_url();?>/assets/img/logo.png" />
 </head>
 <style>
     html,body {
@@ -68,7 +69,7 @@
 	                <a class="nav-link" href="<?php echo base_url('index.php/cangga/penyakit')?>">KELOLA PENYAKIT</a>
 	            </li>
               <li class="nav-item" style="margin-right: 20px;">
-	                <a class="nav-link" href="<?php echo base_url('index.php/cangga/penyakit')?>">KELOLA PERTANYAAN</a>
+	                <a class="nav-link" href="<?php echo base_url('index.php/cangga/pertanyaan')?>">KELOLA PERTANYAAN</a>
 	            </li>
 	        </ul>
     	</div>

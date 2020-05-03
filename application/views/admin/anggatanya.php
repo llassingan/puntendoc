@@ -13,7 +13,7 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
   
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-    <title>Kelola Penyakit</title>
+    <title>Kelola Pertanyaan</title>
     <link rel="icon" type="image/x-icon" href="<?= base_url();?>/assets/img/logo.png" />
 </head>
 <style>
@@ -86,33 +86,30 @@
 <body>
     <center>
 	<div id="box">
-        <h1>Daftar Informasi Penyakit</h1>
+        <h1>Daftar Pertanyaan</h1>
         <div class="table-responsive" > 
         <table class="table table-hover" id="tablee">
             <thead class= "thead thead-dark">
               <tr>
                 <th scope="col">ID</th>
-                <th scope="col">Nama Penyakit</th>
-                <th scope="col">Gejala</th>
-                <th scope="col">Tindakan</th>
+                <th scope="col">Username</th>
+                <th scope="col">Pertanyaan</th>
+                <th scope="col">Kategori</th>
 				<th scope="col" >Hapus</th>
-				<th scope="col" >Edit</th>
               </tr>
             </thead>
             
             <tbody>
-            <?php $no=1; foreach ($data as $row ) {?>
+            <?php
+	                $no=0; foreach ($data as $row ) {?>
               <tr>
                 <th><?php echo $no++ ?></th>
-                <td><?php echo $row->nama ?></td>
-                <td><?php echo $row->gejala ?></td>
-                <td><?php echo $row->tindakan ?></td>
-				        <td><a type="button" class="btn btn-danger"  href="<?php echo base_url('index.php/Cangga/hapuspenyakit/'.$row->id); ?>" onClick="return confirm('Apakah Anda Yakin?')" ><i class="fas fa-user-times"></i></a></td>
+                <td><?php echo $row->username ?></td>
+                <td><?php echo $row->pertanyaan ?></td>
+                <td><?php echo $row->kategori ?></td>
+				        <td><a type="button" class="btn btn-danger"  href="<?php echo base_url('index.php/Cangga/hapustanya/'.$row->id); ?>" onClick="return confirm('Apakah Anda Yakin?')" ><i class="fas fa-user-times"></i></a></td>
 				        </td>
-				        <td>
-					      <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#<?php echo $row->id ?>"><i class="fas fa-user-edit"></i></button>
-				        </td>
-            </tr>
+              </tr>
 			  <?php
               }
 				?>
@@ -120,83 +117,9 @@
             
           </table>
           </div>
-          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#tambahbro">TAMBAH PENYAKIT</button>
-		  	<!-- Button trigger modal -->
 		  </div>
     </center>
 	
-	
-	
-	
-		<!-- modal tambah -->
-	
-<div class="modal fade" id="tambahbro" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel1" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-      <center><h2>TAMBAH DATA</h2></center>
-      </div>
-      <div class="modal-body">
-      <!-- isi form ini -->
-      <form method="POST" action="<?php echo base_url('index.php/cangga/tambahsakit') ?>">
-        <div class="form-group">
-          <label for="formGroupExampleInput">Nama Penyakit</label>
-          <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Nama Penyakit" name="nama" required >
-        </div>
-        <div class="form-group">
-          <label for="formGroupExampleInput">Gejala</label>
-		  <textarea class="form-control" rows="5" id="formGroupExampleInput" placeholder="Gejala" name="gejala"required></textarea>
-        </div>
-        <div class="form-group">
-          <label for="formGroupExampleInput">Tindakan</label>
-		  <textarea class="form-control" rows="5" id="formGroupExampleInput" placeholder="Tindakan" name="tindakan"required></textarea>
-        </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
-        <input  type="submit" class="btn btn-primary" id="hapus" value="Submit" placeholder="Simpan">
-      </form>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-
-<?php
-	$no=1; foreach ($data as $row1 ) {?>
-  <div class="modal fade" id="<?php echo $row1->id ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-        <center><h2>EDIT DATA PENYAKIT <?php echo $row1->nama ?> </h2></center>
-        </div>
-        <div class="modal-body">
-        <!-- isi form ini -->
-        <form method="post" action="<?php echo base_url('index.php/cangga/editsakit')?>">
-        <input type="hidden" class="form-control" id="formGroupExampleInput" placeholder="Id" name="idx" value="<?php echo $row1->id ?>"  required>
-		 <div class="form-group">
-          <label for="formGroupExampleInput">Nama Penyakit</label>
-          <input type="text" class="form-control" id="formGroupExampleInput" name="nama" value="<?php echo $row1->nama ?>"required >
-        </div>
-        <div class="form-group">
-          <label for="formGroupExampleInput">Gejala</label>
-		  <textarea class="form-control" rows="5" id="formGroupExampleInput" placeholder="Gejala" name="gejala" required><?php echo $row1->gejala ?></textarea>
-        </div>
-        <div class="form-group">
-          <label for="formGroupExampleInput">Tindakan</label>
-		  <textarea class="form-control" rows="5" id="formGroupExampleInput" placeholder="Tindakan" name="tindakan" required><?php echo $row1->tindakan ?></textarea>
-        </div>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Tidak</button>
-        <input  type="submit" class="btn btn-primary" id="hapus" value="Submit" placeholder="Simpan">
-        </div>
-        </form>
-      </div>
-    </div>
-  </div>
-	<?php }?>
 	
 
     <div id="footer">

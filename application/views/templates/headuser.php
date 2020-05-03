@@ -29,11 +29,20 @@
 
 		<div class="navbar-collapse collapse order-0 dual-collapse2" >
 	        <ul class="navbar-nav mx-auto">
-	            <li class="nav-item" style="margin-right: 20px; margin-left: 200px;">
+				<li class="nav-item" style="margin-right: 20px; margin-left: 200px;">
+	                <a class="nav-link" href="<?php echo base_url() ?>artikellist">ARTIKEL</a>
+	            </li>
+	            <li class="nav-item" style="margin-right: 20px;">
+	                <a class="nav-link" href="<?php echo base_url() ?>obatlist">OBAT</a>
+	            </li>
+	            <li class="nav-item" style="margin-right: 20px;">
+	                <a class="nav-link" href="<?php echo base_url() ?>penyakitlist">PENYAKIT</a>
+	            </li>
+				<li class="nav-item" style="margin-right: 20px;">
 	                <a class="nav-link" href="<?php echo base_url() ?>index.php/user/dashboard/">LANDING PAGE</a>
 	            </li>
 	            <li class="nav-item" style="margin-right: 20px;">
-	                <a class="nav-link" href="#">TANYA DOKTER</a>
+	                <a class="nav-link" href="<?php echo base_url() ?>index.php/user/dashboard/pertanyaan">TANYA DOKTER</a>
 	            </li>
 	        </ul>
     	</div>

@@ -10,6 +10,7 @@ class ArtikelDetail extends CI_Controller{
 	function __construct(){
 		parent::__construct();
 		$this->load->model('Artikel');
+		$this->load->model('admin');
 	}
 
 
@@ -20,7 +21,13 @@ class ArtikelDetail extends CI_Controller{
 
 		$data['judul'] = $artikel[0]->judul;
 
-		$this->load->view('templates/header', $data);
+		if($this->admin->is_role() == "admin"){
+            $this->load->view('templates/headadmin', $data);
+        }else if ($this->admin->is_role() == "user"){
+			$this->load->view('templates/headuser', $data);
+		}else{
+			$this->load->view('templates/header', $data);
+		}
 		$this->load->view('show_detail/detail_artikel', $data);
 		$this->load->view('templates/footer');
 	}

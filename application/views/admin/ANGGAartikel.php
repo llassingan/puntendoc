@@ -14,6 +14,7 @@
   
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <title>Kelola Artikel</title>
+    <link rel="icon" type="image/x-icon" href="<?= base_url();?>/assets/img/logo.png" />
 </head>
 <style>
     html,body {
@@ -68,7 +69,7 @@
 	                <a class="nav-link" href="<?php echo base_url('index.php/cangga/penyakit')?>">KELOLA PENYAKIT</a>
 	            </li>
               <li class="nav-item" style="margin-right: 20px;">
-	                <a class="nav-link" href="<?php echo base_url('index.php/cangga/penyakit')?>">KELOLA PERTANYAAN</a>
+	                <a class="nav-link" href="<?php echo base_url('index.php/cangga/pertanyaan')?>">KELOLA PERTANYAAN</a>
 	            </li>
 	        </ul>
     	</div>
@@ -93,6 +94,7 @@
                 <th scope="col">ID</th>
                 <th scope="col">Judul</th>
                 <th scope="col">Penulis</th>
+                <th scope="col">Kategori</th>
 				<th scope="col" >Hapus</th>
 				<th scope="col" >Edit</th>
               </tr>
@@ -105,6 +107,7 @@
                 <th><?php echo $no++ ?></th>
                 <td><?php echo $row->judul ?></td>
                 <td><?php echo $row->penulis ?></td>
+                <td><?php echo $row->kategori ?></td>
 				        <td><a type="button" class="btn btn-danger"  href="<?php echo base_url('index.php/Cangga/hapusartikel/'.$row->id); ?>" onClick="return confirm('Apakah Anda Yakin?')" ><i class="fas fa-user-times"></i></a></td>
 				        </td>
 				        <td>
@@ -149,6 +152,13 @@
           <label for="formGroupExampleInput">Isi</label>
 		  <textarea class="form-control" rows="10" id="formGroupExampleInput" placeholder="Isi Artikel" name="isi"required></textarea>
         </div>
+        <div class="form-group"> 
+        <label for="formGroupExampleInput">Kategori</label>
+        <select class="form-control" id="formGroupExampleInput2" name="kategori" required>
+                <option value="Kesehatan Keluarga" selected>Kesehatan Keluarga</option>
+                <option value="Tren">Tren</option>
+        </select>
+        </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
@@ -184,6 +194,13 @@
         <div class="form-group">
           <label for="formGroupExampleInput">Isi</label>
 		  <textarea class="form-control" rows="10" id="formGroupExampleInput" placeholder="Isi Artikel" name="isi" required><?php echo $row1->isi ?></textarea>
+        </div>
+        <div class="form-group"> 
+        <label for="formGroupExampleInput">Kategori</label>
+        <select class="form-control" id="formGroupExampleInput2" name="kategori" required>
+                <option value="Kesehatan Keluarga" selected>Kesehatan Keluarga</option>
+                <option value="Tren">Tren</option>
+        </select>
         </div>
         </div>
         <div class="modal-footer">

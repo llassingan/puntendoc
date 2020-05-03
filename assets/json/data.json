@@ -1,0 +1,21 @@
+[
+    {"nama":"dr Angga",
+    "spesialis" : "Dokter Jiwa",
+    "gambar":"gambar.png"},
+
+    {"nama":"dr Alfian",
+    "spesialis" : "Dokter Anak",
+    "gambar":"gambar2.png"},
+    
+    {"nama":"dr Intan",
+    "spesialis": "Dokter Bedah",
+    "gambar":"gambar3.png"}
+	
+	{"nama":"dr Clara",
+    "spesialis": "Dokter Gigi",
+    "gambar":"gambar4.png"}
+	
+	{"nama":"dr Christina",
+    "spesialis": "Dokter Kulit",,
+    "gambar":"gambar5.png"}
+]

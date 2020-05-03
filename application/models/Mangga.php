@@ -12,12 +12,21 @@ class Mangga extends CI_Model {
     public function Getartikel(){
 		return $this->db->get('tbl_artikel')->result();
 	}
+	public function Gettanya(){
+		return $this->db->get('tbl_pertanyaan')->result();
+	}
 
 	public function delobat($id)
 	{
 		$this->db->delete('tbl_obat', array('id' => $id));
 	    return;
+	}
+	public function deltanya($id)
+	{
+		$this->db->delete('tbl_pertanyaan', array('id' => $id));
+	    return;
     }
+
     public function delsakit($id)
 	{
 		$this->db->delete('tbl_penyakit', array('id' => $id));
@@ -59,6 +68,12 @@ class Mangga extends CI_Model {
     public function tambahsakit($data)
 	{
 		$this->db->insert('tbl_penyakit',$data);
+	    return;
+	}
+
+	public function tambahtanya($data)
+	{
+		$this->db->insert('tbl_pertanyaan',$data);
 	    return;
 	}
 

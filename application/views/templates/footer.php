@@ -55,8 +55,40 @@
 
 	  <!-- Optional JavaScript -->
 	  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/cjs/popper.min.js" integrity="sha256-SZAAW0gKAx1QbwIZt+3dTV3JSvyIHmnxA8semqGwJf0=" crossorigin="anonymous"></script>
 	  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.slim.min.js" integrity="sha256-MlusDLJIP1GRgLrOflUQtshyP0TwT/RHXsI1wWGnQhs=" crossorigin="anonymous"></script>
-	  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/cjs/popper.min.js" integrity="sha256-SZAAW0gKAx1QbwIZt+3dTV3JSvyIHmnxA8semqGwJf0=" crossorigin="anonymous"></script>
+	   -->
 	  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+	  <script>
+		$(document).ready(function(){
+		$(function() {
+    	$.getJSON('assets/json/data.json',function(hasil){
+        console.log(hasil);
+        d="";
+        for(a in hasil){
+                  
+				d+= "<div class='col' style='margin-top: 30px;'>"
+				+"<div class='card' style='width: 16rem; height: 6rem; '>"
+					+"<div class='row no-gutters'>"
+						+"<div class='col-sm-2 d-flex align-items-center justify-content-center' style='margin-left: 20px;'>"
+							+"<img src="+hasil[a].gambar+" class='rounded-circle' style='width: 50px; height: 50px;' alt='...'> </div>"						
+						+"<div class='col-sm-8'>"
+							+"<div class='card-body p-0'>"
+								+"<h5 class='card-title p-0 m-0'>"+hasil[a].nama+"</h5>"
+								+"<p class='card-text p-0 m-0'>"+hasil[a].gambar+"</p>"
+							+"</div>"
+						+"</div>"
+					+"</div>"
+				+"</div>"
+			+"</div>"
+			}
+             $(d).appendTo("#kontennya");
+			//document.getElementById("kontennya").innerHTML += d;
+            
+    });
+});
+});
+
+	  </script>
 	</body>
 	</html>
