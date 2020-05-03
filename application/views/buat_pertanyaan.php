@@ -41,7 +41,7 @@
    </nav>
    
    
-    <div class="container" style="padding-top: 100px;">
+    <!-- <div class="container" style="padding-top: 100px;">
         <div class="card mb-3" style="border-color: #C5EFF7; background-color: #C5EFF7;" >
             <div class="card-header" style="font-size: 36px;">Buat Pertanyaan</div>
             <div class="card-body">
@@ -54,21 +54,44 @@
                     <div class="form-group">
                       <label for="isiPertanyaan">Pertanyaan</label>
                       <input type="text" class="form-control" id="isiPertanyaan">
-                    </div>
+                    </div> -->
                     <!-- <div class="form-group form-check">
                       <input type="checkbox" class="form-check-input" id="exampleCheck1">
                       <label class="form-check-label" for="exampleCheck1">Check me out</label>
                     </div> -->
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <!-- <button type="submit" class="btn btn-primary">Submit</button>
                 </form>
             </div>
             </div>
         </div>
+    </div> -->
+    <div class="container">
+    <div class="row mt-3">
+        <div class="col">
+            <div class="card">
+                <div class="card-header text-center">
+                    Form Buat Pertanyaan
+                </div>
+                <div class="card-body">
+                    <form action="" method="post">
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="text" class="form-control" id="email" name="email">
+                            <small id="emailPertanyaan" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                            <small class="form-text text-danger"><?= form_error('email') ?>.</small>
+                        </div>
+                        <div class="form-group">
+                            <label for="pertanyaan">Pertanyaan</label>
+                            <input type="text" class="form-control" id="pertanyaan" name="pertanyaan">
+                            <small class="form-text text-danger"><?= form_error('pertanyaan') ?>.</small>
+                        </div>
+                        <button type="submit" name="tambah" class="btn btn-primary float-right">Submit</button>
+                    </form>
+                </div>
+            </div>
+
+        </div>
     </div>
+</div> 
 </body>
-<script type="text/javascript">
-    $(document).ready( function () {
-        $('#tablee').DataTable();
-    } );
-</script>
 </html>
