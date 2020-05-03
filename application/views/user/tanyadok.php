@@ -85,7 +85,7 @@
 
 <body>
     <center>
-	<div id="box">
+	<div id="box" style="margin-bottom:60px;">
         <h1>Daftar Pertanyaan Saya</h1>
         <div class="table-responsive" > 
         <table class="table table-hover" id="tablee">

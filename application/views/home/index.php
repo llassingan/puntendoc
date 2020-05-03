@@ -56,28 +56,13 @@ $(function() {
         d="";
         for(a in hasil){
                   
-			 d+=  //"<div class='col' style='margin-top: 30px;'>"
-			// 	+"<div class='card' style='width: 16rem; height: 6rem; '>"
-			// 		+"<div class='row no-gutters'>"
-			// 			+"<div class='col-sm-2 d-flex align-items-center justify-content-center' style='margin-left: 20px;'>"
-			// 				+"<img src="+hasil[a].gambar+" class='rounded-circle' style='width: 50px; height: 50px;' alt='...'> </div>"						
-			// 			+"<div class='col-sm-8'>"
-			// 				+"<div class='card-body p-0'>"
-			// 					+"<h5 class='card-title p-0 m-0'>"+hasil[a].nama+"</h5>"
-			// 					+"<p class='card-text p-0 m-0'>"+hasil[a].spesialis+"</p>"
-			// 				+"</div>"
-			// 			+"</div>"
-			// 		+"</div>"
-			// 	+"</div>"
-			// +"</div>"
-
-			"<div class='card' style='width: 19rem; margin-right:10px; margin-bottom:15px; margin-top:15px;'>"
-  +"<img class='card-img-top' src="+hasil[a].gambar+" alt='Dokter 100%x280' style='width: 100%; height: 280px;' >"
-  +"<div class='card-body'>"
-    +"<h5 class='card-title p-0 m-0'>"+hasil[a].nama+"</h5>"
-    +"<p class='card-text p-0 m-0'>"+hasil[a].spesialis+"</p>"
-  +"</div>"
-+"</div> "
+			 d+= "<div class='card' style='width: 19rem; margin-right:10px; margin-bottom:15px; margin-top:15px;'>"
+  					+"<img class='card-img-top' src="+hasil[a].gambar+" alt='Dokter 100%x280' style='width: 100%; height: 280px;' >"
+ 						 +"<div class='card-body'>"
+    						+"<h5 class='card-title p-0 m-0'>"+hasil[a].nama+"</h5>"
+    						+"<p class='card-text p-0 m-0'>"+hasil[a].spesialis+"</p>"
+ 						 +"</div>"
+				+"</div> "
 
 			}
             document.getElementById("kontennya").innerHTML += d;
@@ -96,7 +81,7 @@ $(function() {
 	<div class="container" style="margin-top: 20px;">
 		<?php 
 
-		for ($i=0; $i < 11 && $i < sizeof($dataObat); $i++) { 
+		for ($i=0; $i < 6 && $i < sizeof($dataObat); $i++) { 
 
 			if ($i % 6 == 0 && $i == 0) {
 				echo '<div class="row no-gutters" >';
@@ -183,76 +168,7 @@ $(function() {
 						?> 
 
 
-						<!-- <div class="carousel-item active">
-							<div class="row">
-								<div class="col-md-4 mb-3">
-									<div class="card">
-										<img class="img-fluid" alt="100%x280" src="https://images.unsplash.com/photo-1532781914607-2031eca2f00d?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=7c625ea379640da3ef2e24f20df7ce8d">
-										<div class="card-body">
-											<h4 class="card-title">Special title treatment</h4>
-											<p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-										</div>
-									</div>
-								</div>
-								<div class="col-md-4 mb-3">
-									<div class="card">
-										<img class="img-fluid" alt="100%x280" src="https://images.unsplash.com/photo-1517760444937-f6397edcbbcd?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=42b2d9ae6feb9c4ff98b9133addfb698">
-										<div class="card-body">
-											<h4 class="card-title">Special title treatment</h4>
-											<p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-
-										</div>
-									</div>
-								</div>
-								<div class="col-md-4 mb-3">
-									<div class="card">
-										<img class="img-fluid" alt="100%x280" src="https://images.unsplash.com/photo-1532712938310-34cb3982ef74?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=3d2e8a2039c06dd26db977fe6ac6186a">
-										<div class="card-body">
-											<h4 class="card-title">Special title treatment</h4>
-											<p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="carousel-item">
-							<div class="row">
-
-								<div class="col-md-4 mb-3">
-									<div class="card">
-										<img class="img-fluid" alt="100%x280" src="https://images.unsplash.com/photo-1532771098148-525cefe10c23?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=3f317c1f7a16116dec454fbc267dd8e4">
-										<div class="card-body">
-											<h4 class="card-title">Special title treatment</h4>
-											<p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-
-										</div>
-
-									</div>
-								</div>
-								<div class="col-md-4 mb-3">
-									<div class="card">
-										<img class="img-fluid" alt="100%x280" src="https://images.unsplash.com/photo-1532715088550-62f09305f765?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=ebadb044b374504ef8e81bdec4d0e840">
-										<div class="card-body">
-											<h4 class="card-title">Special title treatment</h4>
-											<p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-
-										</div>
-									</div>
-								</div>
-								<div class="col-md-4 mb-3">
-									<div class="card">
-										<img class="img-fluid" alt="100%x280" src="https://images.unsplash.com/photo-1506197603052-3cc9c3a201bd?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=0754ab085804ae8a3b562548e6b4aa2e">
-										<div class="card-body">
-											<h4 class="card-title">Special title treatment</h4>
-											<p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-
-										</div>
-									</div>
-								</div>
-
-							</div>
-						</div> -->
+						
 					</div>
 				</div>
 			</div>

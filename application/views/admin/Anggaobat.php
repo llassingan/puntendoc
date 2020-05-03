@@ -84,7 +84,7 @@
 	</nav>
 
     <center>
-	<div id="box">
+	<div id="box" style="margin-bottom:60px;">
         <h1>Daftar Informasi Obat</h1>
         <div class="table-responsive" > 
         <table class="table table-hover" id="tablee">
