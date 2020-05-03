@@ -14,7 +14,7 @@ class Cangga extends CI_Controller {
             if($this->admin->is_role() == "user"){
                 redirect("index.php/user/dashboard");
             }else{
-                redirect("login");
+                redirect("login",$data);
             }
         }
      }
@@ -76,7 +76,7 @@ class Cangga extends CI_Controller {
        $nama = $this->input->post('nama');
        $deskripsi = $this->input->post('deskripsi');
        $data = array(
-           'nama' => $deskripsi,
+           'nama' => $nama,
            'deskripsi' => $deskripsi,
        );
        $this->Mangga->tambahobat($data);

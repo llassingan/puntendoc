@@ -16,6 +16,7 @@
 			echo '<p class="card-text isi-artikel">'. $penyakit['gejala'] .'</p>';			
 			echo '<p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>';
 			echo '</div></div></a>';
+			echo '</br>';
 		}
 
 		?>

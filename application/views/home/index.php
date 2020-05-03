@@ -1,4 +1,4 @@
-<div id="topCarousel" class="carousel slide" data-ride="carousel">
+<div id="topCarousel" class="carousel slide carousel-fade" data-ride="carousel">
 	<ol class="carousel-indicators">
 		<li data-target="#topCarousel" data-slide-to="0" class="active"></li>
 		<li data-target="#topCarousel" data-slide-to="1"></li>
@@ -11,22 +11,22 @@
 		<div class="carousel-item active">
 			<img src="<?=base_url(); ?>/assets/img/car3.jpg" class="d-block w-100" alt="...">
 			<div class="carousel-caption d-none d-md-block">
-				<h5 style="color : #42b4ff;" >Puntendoc</h5>
-				<p style="color : #42b4ff;">Solusi Kesehatanmu</p>
+				<h3 style="color : #1118a8; font-weight:bold;" >Puntendoc</h3>
+				<p style="color : #1118a8;  font-weight:500;">Solusi Kesehatanmu</p>
 			</div>
 		</div>
 		<div class="carousel-item">
 			<img src="<?=base_url(); ?>/assets/img/car1.jpg" class="d-block w-100" alt="...">
 			<div class="carousel-caption d-none d-md-block">
-				<h5 style="color : white;">Puntendoc</h5>
-				<p style="color : white;">Solusi Kesehatanmu</p>
+			<h3 style="color : #1118a8; font-weight:bold;" >Puntendoc</h3>
+			<p style="color : #1118a8;  font-weight:500;">Solusi Kesehatanmu</p>
 			</div>
 		</div>
 		<div class="carousel-item">
 			<img src="<?=base_url(); ?>/assets/img/car2.jpg" class="d-block w-100" alt="...">
 			<div class="carousel-caption d-none d-md-block">
-				<h5 style="color : cyan;">Puntendoc</h5>
-				<p style="color : cyan;">Solusi Kesehatanmu</p>
+			<h3 style="color : #1118a8; font-weight:bold;" >Puntendoc</h3>
+			<p style="color : #1118a8;  font-weight:500;">Solusi Kesehatanmu</p>
 			</div>
 		</div>
 	</div>
@@ -130,33 +130,13 @@
 							</div>
 							<div class="col-sm-8">
 								<div class="card-body p-0">
-									<h5 class="card-title p-0 m-0">Lihat dokter lainnya >></h5>
+									<h5 class="card-title p-0 m-0">Lihat Obat lainnya >></h5>
 								</div>
 							</div>
 						</div>
 					</div>
 				</a>
 			</div>
-		<!-- <a class="col-sm-2" href="<?php echo base_url() ?>obatlist">
-			<div class="row text-center">
-				<div class="card-body border-bottom shadow-sm p-3 bg-white">
-					<p class="card-text">Lihat obat lainnya >> </p>
-				</div>
-			</div>
-		</a> -->
-<!-- 		<div class="row no-gutters" >
-			<div class="col" style="width: 20%;">
-				<div class="row text-center">
-					<div class="card-body border-bottom shadow-sm p-3 bg-white">
-						<h6 class="card-subtitle mb-2 text-muted p-0 m-0"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQRqR8HpOZMZwoJGqhadBSizby6q25ZLA8uPOY0V9l64NxD3mLu&usqp=CAU" style="width: 80%; height: 80%;"></h6>
-						<p class="card-text">Obat </p>
-					</div>
-				</div>
-			</div>
-		</div>
-
-		<div class="row no-gutters" >
-		</div> -->
 	</div>
 </section>
 
@@ -210,76 +190,7 @@
 						?>
 
 
-						<!-- <div class="carousel-item active">
-							<div class="row">
-								<div class="col-md-4 mb-3">
-									<div class="card">
-										<img class="img-fluid" alt="100%x280" src="https://images.unsplash.com/photo-1532781914607-2031eca2f00d?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=7c625ea379640da3ef2e24f20df7ce8d">
-										<div class="card-body">
-											<h4 class="card-title">Special title treatment</h4>
-											<p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-										</div>
-									</div>
-								</div>
-								<div class="col-md-4 mb-3">
-									<div class="card">
-										<img class="img-fluid" alt="100%x280" src="https://images.unsplash.com/photo-1517760444937-f6397edcbbcd?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=42b2d9ae6feb9c4ff98b9133addfb698">
-										<div class="card-body">
-											<h4 class="card-title">Special title treatment</h4>
-											<p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
 
-										</div>
-									</div>
-								</div>
-								<div class="col-md-4 mb-3">
-									<div class="card">
-										<img class="img-fluid" alt="100%x280" src="https://images.unsplash.com/photo-1532712938310-34cb3982ef74?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=3d2e8a2039c06dd26db977fe6ac6186a">
-										<div class="card-body">
-											<h4 class="card-title">Special title treatment</h4>
-											<p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="carousel-item">
-							<div class="row">
-
-								<div class="col-md-4 mb-3">
-									<div class="card">
-										<img class="img-fluid" alt="100%x280" src="https://images.unsplash.com/photo-1532771098148-525cefe10c23?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=3f317c1f7a16116dec454fbc267dd8e4">
-										<div class="card-body">
-											<h4 class="card-title">Special title treatment</h4>
-											<p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-
-										</div>
-
-									</div>
-								</div>
-								<div class="col-md-4 mb-3">
-									<div class="card">
-										<img class="img-fluid" alt="100%x280" src="https://images.unsplash.com/photo-1532715088550-62f09305f765?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=ebadb044b374504ef8e81bdec4d0e840">
-										<div class="card-body">
-											<h4 class="card-title">Special title treatment</h4>
-											<p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-
-										</div>
-									</div>
-								</div>
-								<div class="col-md-4 mb-3">
-									<div class="card">
-										<img class="img-fluid" alt="100%x280" src="https://images.unsplash.com/photo-1506197603052-3cc9c3a201bd?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=0754ab085804ae8a3b562548e6b4aa2e">
-										<div class="card-body">
-											<h4 class="card-title">Special title treatment</h4>
-											<p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-
-										</div>
-									</div>
-								</div>
-
-							</div>
-						</div> -->
 					</div>
 				</div>
 			</div>
@@ -312,37 +223,6 @@
 		}
 
 		?>
-
-
-		<!-- <div class="row no-gutters">
-			<div class="col-sm-2 d-flex align-items-center justify-content-center p-0 m-0" >
-				<img src="https://static.guesehat.com/static/article_thumb/apa_itu_twin_flame_-_guesehatcom_1585722853.jpg" style="width: 100%;" alt="...">
-			</div>
-			<div class="col-md-8">
-				<div class="card-body p-0" style="padding: 20px;">
-					<span class="badge badge-success mb-3">Kategori</span>
-					<h5 class="card-title">Judul Artikel</h5>
-					<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-					<p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-				</div>
-			</div>
-		</div>
-
-
-		<div class="row no-gutters">
-			<div class="col-sm-2 d-flex align-items-center justify-content-center p-0 m-0" >
-				<img src="https://static.guesehat.com/static/article_thumb/apa_itu_twin_flame_-_guesehatcom_1585722853.jpg" style="width: 100%;" alt="...">
-			</div>
-			<div class="col-md-8">
-				<div class="card-body p-0" style="padding: 20px;">
-					<span class="badge badge-success mb-3">Kategori</span>
-					<h5 class="card-title">Judul Artikel</h5>
-					<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-					<p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-				</div>
-			</div>
-		</div> -->
-
 
 	</div>
 </section>

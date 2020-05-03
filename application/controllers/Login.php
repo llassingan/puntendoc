@@ -28,7 +28,7 @@ class Login extends CI_Controller {
             }else{
 
                 //jika session belum terdaftar
-
+                
                 //set form validation
                 $this->form_validation->set_rules('username', 'Username', 'required');
                 $this->form_validation->set_rules('password', 'Password', 'required');

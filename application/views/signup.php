@@ -92,6 +92,7 @@
     <div>
         <h4 class="batas">---------</h4>
         <h1 class="text-center signup-title">Selamat Datang di Puntendoc<br>Sign Up</h1>
+        <?php if(isset($error)) { echo $error; }; ?>
         <div class="regis">
             <form class="form-signup" method="POST" action="<?php echo base_url('index.php/signup/signup') ?> ">
               <div class="form-group">

@@ -31,9 +31,23 @@ class SignUp extends CI_Controller {
                 'email' => $email,
                 'password' => $password,
                 'role' => $role,
-            ); 
-             $this->User->signup($data);
-             
-             redirect('login');
+            );
+            
+            $nani = $this->input->post('username', TRUE);
+            $checking = $this->User->check_duplicate('tbl_users', array('username' => $nani));
+
+                //jika ditemukan, message
+                if ($checking != FALSE) {
+                    $data['error'] = '<div class="alert alert-danger" style="margin-top: 3px">
+                        <div class="header"><b><i class="fa fa-exclamation-circle"></i>DUPLIKAT</b> Username tersebut sudah terdaftar</div></div>';
+                    $this->load->view('signup', $data);
+                }else{
+                    $this->User->signup($data);
+                    redirect('login');
+                    
+                }
+     
      }
+
+     
 }

@@ -62,7 +62,7 @@
         </object>
     </div>
     <div id="kanan" style="width:50%; height: 500px;float:right; margin-top: 60px">
-        <h1 style="text-align: center; margin-top: 180px; font-size: 4em">Selamat Datang <b>Dokter <?php echo $this->session->userdata("user_nama") ?></b> !</h1>
+        <h1 style="text-align: center; margin-top: 180px; font-size: 4em">Selamat Datang <b><?php echo $this->session->userdata("user_nama") ?></b> !</h1>
     </div>
 </div>
 

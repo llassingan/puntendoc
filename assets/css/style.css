@@ -10,6 +10,10 @@ body {
 	padding-top: 60px;
 }
 
+h4{
+	font-weight:700;
+}
+
 #search-container{
 	width: 750px;
 	position: absolute;
