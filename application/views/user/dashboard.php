@@ -65,12 +65,12 @@
 	</nav>
 
 <div class="container">
-    <div id="kiri" style="width:50%; height:500px; float:left; margin-top: 60px">
+    <div id="kiri" style="width:50%; height:500px; float:left; margin-top: 150px">
         <object data="your-svg-image.svg" type="image/svg+xml"> 
         <img src="<?= base_url();?>/assets/img/doct.png">
         </object>
     </div>
-    <div id="kanan" style="width:50%; height: 500px;float:right; margin-top: 60px">
+    <div id="kanan" style="width:50%; height: 500px;float:right; margin-top: 150px">
         <h1 style="text-align: center; margin-top: 180px; font-size: 4em">Selamat Datang <b><?php echo $this->session->userdata("user_nama") ?></b> !</h1>
     </div>
 </div>
