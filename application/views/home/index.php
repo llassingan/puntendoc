@@ -77,47 +77,35 @@ $(function() {
 
 </section>
 
-<section class="section-obat">
-	<div class="container" style="margin-top: 20px;">
-		<?php 
+<section class="section-artikel" style="margin-top: 40px; margin-bottom: 40px;">
 
-		for ($i=0; $i < 6 && $i < sizeof($dataObat); $i++) { 
+	<div class="container">
+		<a href="<?php echo base_url() ?>artikellist"><h3 style=" margin-bottom: 20px;">Artikel</h3></a>
 
-			if ($i % 6 == 0 && $i == 0) {
-				echo '<div class="row no-gutters" >';
-			} elseif ($i % 6 == 0 && $i != 0){
-				echo '</div><div class="row no-gutters" >';
-			}
-			
-			echo '<a class="col-sm-2" href="'. base_url(). 'obatdetail/'. $dataObat[$i]['id'] .'">';
-			echo '<div class="row text-center">';
-			echo '<div class="card-body border-bottom shadow-sm p-3 bg-white">';
-			echo '<h6 class="card-subtitle mb-2 text-muted p-0 m-0"><img src='. $dataObat[$i]['link'] .' style="width: 100%; height: 120px;"></h6>';
-			echo '<p class="card-text">'. $dataObat[$i]['nama'] . '</p>';
-			echo '</div></div>';
-			echo '</a>';
+
+		<?php
+
+		foreach ($dataArtikel as $artikel) { 
+			echo '<a href="'. base_url(). 'artikeldetail/'. $artikel['id'] .'" class="row no-gutters">';
+			echo '<div class="col-sm-2 d-flex align-items-center justify-content-center p-0 m-0" >';
+			echo '<img src='. $artikel['link'] .' style="width: 100%;" alt="...">';
+			echo '</div>';
+			echo '<div class="col-md-8">';
+			echo '<div class="card-body p-0" style="padding: 20px;">';
+			echo '<span class="badge badge-success mb-3">'.$artikel['kategori'].'</span>';
+			echo '<h5 class="card-title">' . $artikel['judul'] . '</h5>';
+			echo '<p class="card-text isi-artikel">'. $artikel['isi'] .'</p>';			
+			echo '<p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>';
+			echo '</div></div></a>';
+			echo '</br>';
 		}
 
 		?>
 
-			<div class="col" style="margin-top: 50px;">
-				<a href="<?php echo base_url() ?>obatlist">
-					<div class="card align-items-center justify-content-center" style="width: 10rem; height: 8rem; ">
-						<div class="row no-gutters align-items-center justify-content-center">
-							<div class="col-sm-2 d-flex align-items-center justify-content-center" style="margin-left: 20px;">
-								<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQRqR8HpOZMZwoJGqhadBSizby6q25ZLA8uPOY0V9l64NxD3mLu&usqp=CAU" class="rounded-circle" style="width: 50px; height: 50px;" alt="...">
-							</div>
-							<div class="col-sm-8">
-								<div class="card-body p-0">
-									<h5 class="card-title p-0 m-0">Lihat Obat lainnya >></h5>
-								</div>
-							</div>
-						</div>
-					</div>
-				</a>
-			</div>
 	</div>
+
 </section>
+
 
 
 <section class="section-penyakit pt-5 pb-5" style="background-color: #f5f5f5">
@@ -177,31 +165,49 @@ $(function() {
 </section>
 
 
-<section class="section-artikel" style="margin-top: 40px; margin-bottom: 40px;">
-
-	<div class="container">
-		<a href="<?php echo base_url() ?>artikellist"><h3 style=" margin-bottom: 20px;">Artikel</h3></a>
 
 
-		<?php
+<section class="section-obat">
+	<div class="container" style="margin-top: 20px;">
+	<div class="col-6">
+				<a href="<?php echo base_url() ?>obatlist"><h3 class="mb-3">Info Obat</h3></a>
+	</div>
+		<?php 
 
-		foreach ($dataArtikel as $artikel) { 
-			echo '<a href="'. base_url(). 'artikeldetail/'. $artikel['id'] .'" class="row no-gutters">';
-			echo '<div class="col-sm-2 d-flex align-items-center justify-content-center p-0 m-0" >';
-			echo '<img src='. $artikel['link'] .' style="width: 100%;" alt="...">';
-			echo '</div>';
-			echo '<div class="col-md-8">';
-			echo '<div class="card-body p-0" style="padding: 20px;">';
-			echo '<span class="badge badge-success mb-3">'.$artikel['kategori'].'</span>';
-			echo '<h5 class="card-title">' . $artikel['judul'] . '</h5>';
-			echo '<p class="card-text isi-artikel">'. $artikel['isi'] .'</p>';			
-			echo '<p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>';
-			echo '</div></div></a>';
-			echo '</br>';
+		for ($i=0; $i < 6 && $i < sizeof($dataObat); $i++) { 
+
+			if ($i % 6 == 0 && $i == 0) {
+				echo '<div class="row no-gutters" >';
+			} elseif ($i % 6 == 0 && $i != 0){
+				echo '</div><div class="row no-gutters" >';
+			}
+			
+			echo '<a class="col-sm-2" href="'. base_url(). 'obatdetail/'. $dataObat[$i]['id'] .'">';
+			echo '<div class="row text-center">';
+			echo '<div class="card-body border-bottom shadow-sm p-3 bg-white">';
+			echo '<h6 class="card-subtitle mb-2 text-muted p-0 m-0"><img src='. $dataObat[$i]['link'] .' style="width: 100%; height: 120px;"></h6>';
+			echo '<p class="card-text">'. $dataObat[$i]['nama'] . '</p>';
+			echo '</div></div>';
+			echo '</a>';
 		}
 
 		?>
 
+			<div class="col" style="margin-top: 50px;">
+				<a href="<?php echo base_url() ?>obatlist">
+					<div class="card align-items-center justify-content-center" style="width: 10rem; height: 8rem; ">
+						<div class="row no-gutters align-items-center justify-content-center">
+							<div class="col-sm-2 d-flex align-items-center justify-content-center" style="margin-left: 20px;">
+								<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQRqR8HpOZMZwoJGqhadBSizby6q25ZLA8uPOY0V9l64NxD3mLu&usqp=CAU" class="rounded-circle" style="width: 50px; height: 50px;" alt="...">
+							</div>
+							<div class="col-sm-8">
+								<div class="card-body p-0">
+									<h5 class="card-title p-0 m-0">Lihat Obat lainnya >></h5>
+								</div>
+							</div>
+						</div>
+					</div>
+				</a>
+			</div>
 	</div>
-
 </section>
