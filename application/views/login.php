@@ -105,8 +105,8 @@
                     <?php echo form_error('password'); ?>
                 </div>
                 <button class="btn btn-lg btn-info btn-block" name="btn-login" id="btn-login" type="submit">
-                    Masuk</button>
-                <p style="text-align: center;" class="akun">Belum Punya Akun? <?php echo anchor('signup','Buat Akun');?></p>
+                    Masuk</button><br>
+                <p style="text-align: center; font-family: monospace; font-size: 15px;" class="akun">Belum Punya Akun? <?php echo anchor('signup','Buat Akun');?></p>
             </div>
                 <div id="error" style="margin-top: 10px"></div>
         </div>
